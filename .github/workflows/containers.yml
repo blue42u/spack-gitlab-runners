@@ -24,9 +24,7 @@ jobs:
       # A matrix of Dockerfile paths, associated tags, and which architectures
       # they support.
       matrix:
-        dockerfile: [[e4s-ubuntu-18.04, e4s-ubuntu-18.04.dockerfile, 'linux/amd64,linux/ppc64le,linux/arm64'],
-                     [e4s-ubuntu-20.04, e4s-ubuntu-20.04.dockerfile, 'linux/amd64,linux/ppc64le,linux/arm64'],
-                     [e4s-amazonlinux-2, e4s-amazonlinux-2.dockerfile, 'linux/amd64,linux/arm64'],
+        dockerfile: [
                      [e4s-leap-15, e4s-leap-15.dockerfile, 'linux/amd64'],
                      [e4s-almalinux-8, e4s-almalinux-8.dockerfile, 'linux/amd64,linux/ppc64le,linux/arm64'],
                      [e4s-centos-7, e4s-centos-7.dockerfile, 'linux/amd64'],
@@ -77,5 +75,5 @@ jobs:
           platforms: ${{ matrix.dockerfile[2] }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ghcr.io/spack/${{ env.container }}
-            ghcr.io/spack/${{ env.versioned }}
+            ghcr.io/blue42u/${{ env.container }}
+            ghcr.io/blue42u/${{ env.versioned }}
