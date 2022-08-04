@@ -3,11 +3,11 @@ on:
   # This Workflow can be triggered manually
   workflow_dispatch:
   # Build container images on a daily schedule
-  schedule:
-    - cron: '11 5 * * *'
-  pull_request:
-    branches:
-      - main
+  # schedule:
+  #   - cron: '11 5 * * *'
+  # pull_request:
+  #   branches:
+  #     - main
   # Let's also build & tag Spack containers on releases.
   release:
     types: [published]
